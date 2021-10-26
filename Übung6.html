@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WHILE SWITCH FOR</title>
+    <style>
+        #switchyaz {
+            background-color: red;
+            width: 430px;
+            height: 30px;
+            font-size: 24px;
+            color: white;
+            border-radius: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="meineNachricht"></div>
+    <button type="button" onclick="meineWhile();">KLICK FÜR WHILE</button><br><br>
+    <div id="myMessage"></div><br>
+    <button type="button" onclick="myDoWhile();">KLICK FÜR DO-WHILE</button><br><br>
+    <input type="text" id="take">
+    <button type="button" onclick="MySwitch();">KLICK FÜR SWITCH</button><br><br>
+    <div id="switchyaz"></div><br>
+    <div id="neuFor"></div><br>
+    <div id="neuFor2"></div><br>
+    <script>
+        //simdi while döngüsüne geldik!
+
+        function meineWhile() {
+            var nachricht = "",
+                i = 1;
+            while (i < 10) {
+                nachricht += "Ihre Nummer ist " + i + "<br>";
+                i++;
+            }
+            document.getElementById("meineNachricht").innerHTML = nachricht;
+        }
+        //Bu da do-while döngüsü. Daha kullanisli bu. Önce yazdirir do icindekini sonra döngü saglaniyorsa yazdirir.
+        function myDoWhile() {
+            var message = "",
+                i = 11;
+            do {
+                message += "Ihre Nummer ist " + i + "<br>";
+                i++;
+            } while (i < 10)
+            document.getElementById("myMessage").innerHTML = message;
+        }
+
+        function MySwitch() {
+            var takeValue = document.getElementById("take").value;
+            var message = "";
+            switch (takeValue) {
+                case "JS":
+                    message = "Tebrikler.Bu egitim setini bildiniz!";
+                    break;
+                case "SALI":
+                    message = "Tebrikler.Bugünün Sali oldugunu bildiniz!";
+                    break;
+                case "SEDATPEKER":
+                    message = "Tebrikler. Ülke Gündemini bildiniz!";
+                    break;
+
+                default:
+                    message = "Böyle bir eslesme yok!";
+            }
+            document.getElementById("switchyaz").innerHTML = message;
+        }
+        //if icine break ve continue yazmayi görecez!
+        var text = "";
+        var i;
+        for (i = 1; i < 20; i++) {
+            if (i == 7) {
+                break;
+            }
+            text += "Meine Nummer ist " + i + "<br>";
+        }
+        document.getElementById("neuFor").innerHTML = text;
+
+        var text2 = "";
+        var x;
+        for (x = 0; x < 20; x++) {
+            if (x == 7) {
+                continue;
+            }
+            text2 += "MeineNummer ist " + x + "<br>";
+        }
+        document.getElementById("neuFor2").innerHTML = text2;
+    </script>
+</body>
+
+</html>

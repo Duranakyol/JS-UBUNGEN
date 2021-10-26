@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung2</title>
+</head>
+
+<body onload="message();">
+    <select id="meineSelect" onchange="wechseln();"> 
+        <option>PHP</option>
+        <option>ASP.NET</option>
+        <option>COLD FUSION</option>
+        <option>JSP</option>
+    </select>
+
+    <script>
+        //Sayfa yüklenir yüklenmez mesaj vermek icin onload kullanilir.
+        function message() {
+            alert("Ben yüklendim!");
+        }
+
+        // bir degisiklik yapildiginda asagidaki yaziyi yazacaktir.
+        function wechseln() {
+            document.write("Sanirim bir seyler degistirildi!");
+        }
+    </script>
+
+
+</body>
+
+</html>

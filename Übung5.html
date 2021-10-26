@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ALLE DRINNE</title>
+    <style>
+        #uyari {
+            background-color: red;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="result"></div>
+    <div id="neuArray"></div>
+    <button id="btn" onclick="Add();">CLICK FOR PUSH</button><br><br>
+    <div id="Produkte"></div>
+    <div id="result2"></div><br><br>
+    <button onclick="sortArray();">SORT FOR YEAR</button><br><br>
+    <div id="sortforyear"></div><br>
+    <div id="result3"></div>
+    <button onclick="verify();">DOGRULA</button><br><br>
+    <div id="erfolg"></div><br>
+
+    <div id="uyari"></div><br>
+    <input type="text" id="midterm"><br><br>
+    <input type="text" id="final"><br><br>
+    <button id="btn" onclick="noteResult();">SONUC</button><br><br>
+    <div id="gün"></div><br><br>
+    <div id="sonuc2"></div><br>
+    <input type="text" id="yaz"><br><br>
+    <button onclick="faktorelHesapla();">HESAPLA</button><br><br>
+    <div id="sonuc3"></div><br>
+    <div id="kolayyaz"></div>
+    <button id="btn" onclick="neu();">KLICK FÜR MESAJ</button>
+
+
+
+
+    <script>
+        show();
+
+        function show() {
+            var x;
+            x = 7;
+            document.getElementById("result").innerHTML = typeof x.toString();
+        }
+        var ms = Date.parse("April 21 1970");
+        var d = new Date();
+        document.getElementById("result").innerHTML = ms;
+
+        // Array'leri ögreniyoruz.
+
+        var pc = {
+            graphicCard: "Nvidia",
+            HddType: "SSD",
+            processor: "Intel"
+        };
+        document.getElementById("neuArray").innerHTML = pc.processor; //Intel yazilir.
+
+        var langs = ["PHP", "MysQL", "JQuery", "JavaScript", "BootStrap", "CSS"];
+        var text, i;
+        text = "<ul>";
+        for (i = 0; i < langs.length; i++) {
+            text += "<li>" + langs[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("neuArray").innerHTML = text;
+
+
+
+        document.getElementById("neuArray").innerHTML = langs;
+
+        function Add() {
+            langs.push("HTML5");
+            document.getElementById("neuArray").innerHTML = langs;
+        }
+        document.getElementById("neuArray").innerHTML = isArray(langs);
+
+        function isArray(isHave) {
+            return isHave.constructor.toString().indexOf("Array") > -1;
+        }
+
+        var Computer = [{
+            name: "ASUS",
+            year: 2018,
+            ram: "16gb"
+        }, {
+            name: "HP",
+            year: "2021",
+            ram: "32gb"
+        }, {
+            name: "LENOVO",
+            year: "2019",
+            ram: "12gb"
+        }];
+
+        var show = Computer[0].name + " - " + Computer[0].year + " - " + Computer[0].ram + "<br>" +
+            Computer[1].name + " - " + Computer[1].year + " - " + Computer[1].ram + "<br>" +
+            Computer[2].name + " - " + Computer[2].year + " - " + Computer[2].ram;
+
+        document.getElementById("Produkte").innerHTML = show;
+
+        function sortArray() {
+            Computer.sort(function(x, y) {
+                return x.year - y.year;
+            });
+            document.getElementById("sortforyear").innerHTML = Computer[0].name + " - " + Computer[0].year + " - " + Computer[0].ram + "<br>" +
+                Computer[1].name + " - " + Computer[1].year + " - " + Computer[1].ram + "<br>" +
+                Computer[2].name + " - " + Computer[2].year + " - " + Computer[2].ram;
+        }
+        // bunlari siralayamadik Fehmi UYAR ders 37 son bölüm tekrar bak ! Yaptim la yaptim tamam :)
+
+        var x = true;
+        var y = false;
+
+        function verify() {
+            document.getElementById("result3").innerHTML = Boolean(700) + "<br>" +
+                Boolean(700) + "<br>" +
+                Boolean(3.14) + "<br>" +
+                Boolean(-70) + "<br>" +
+                Boolean("JAVASCRIPT");
+        } //hepsi true cikti!
+
+        //simdi if else'nin kisa yazilisini gösterecegim.
+        var note = 70,
+            result;
+
+        /*erfolgreich();
+
+        function erfolgreich() {
+            result = note >= 60 ? "Dersi gectin" : "Dersten kaldin";
+            document.getElementById("erfolg").innerHTML = result;
+        } */
+
+        function noteResult() {
+            var midtermNote, finalNote, message, average;
+            midtermNote = Number(document.getElementById("midterm").value);
+            finalNote = Number(document.getElementById("final").value);
+            average = midtermNote * 0.3 + finalNote * 0.7;
+            //vizenin yüzde 30'u finalin yüzde 70'i etkilidir demek bu.
+            if (isNaN(midtermNote)) {
+                message = "Vize Notunu sayisal deger girmelisiniz!";
+            } else if (isNaN(finalNote)) {
+                message = "Final notunu sayisal deger girmelisiniz!";
+            } else {
+                message = (average >= 60) ? "Dersi gectiniz!" : "Dersten kaldiniz!";
+            }
+            document.getElementById("uyari").innerHTML = message;
+            //switch case break default'a gecis yaptik.
+        }
+        var day; //burda diyorum ki day variablesi hangi d valuesine esittir?
+        var d = new Date().getDay();
+        switch (d) {
+            case 0:
+                day = "Pazar";
+                break;
+            case 1:
+                day = "Pazartesi";
+                break;
+            case 2:
+                day = "Sali";
+                break;
+            case 3:
+                day = "Carsamba";
+                break;
+            case 4:
+                day = "Persembe";
+                break;
+            case 5:
+                day = "Cuma";
+                break;
+            case 6:
+                day = "Cumartesi";
+                break;
+
+            default:
+                "Böyle bir gün yok!";
+                //Son kisma break yazmana gerek yok!
+        }
+        document.getElementById("gün").innerHTML = day; //Sali yazisi cikti!
+
+        //for döngüsünü gösterecegim.
+        newFor();
+
+        function newFor() {
+            var i, text2 = "";
+            for (i = 1; i < 10; i++) {
+                text2 += i + "<br>";
+            }
+            document.getElementById("sonuc2").innerHTML = text2;
+        }
+
+        for (i = 0; i < langs.length; i++) {
+            text += langs[i] + "<br>";
+        }
+        document.getElementById("forArray").innerHTML = text;
+        //Coklu Array'lerde bu kullanilir yazdirmak icin.
+
+        for (let i = 0; i < 20; i++) {
+            if ((i % 2) !== 0) {
+                text += i + "<br>";
+            }
+            document.getElementById("forArray").innerHTML = text;
+        }
+
+        function faktorelHesapla() { // faktor = 1*1 sonra i +1 oluyor 1*2=2 faktor=2 oluyor.
+            var i, take, faktor = 1; // 2*3= 6 faktor 6 oluyor.
+            take = Number(document.getElementById('yaz').value);
+            for (i = 1; i <= take; i++) {
+                faktor = faktor * i; //faktor *= i;
+            }
+            document.getElementById("sonuc3").innerHTML = faktor;
+        }
+
+        //Simdi bu derste(45) nesneleri kolaylikla array icinden cekmeyi ögrenecez!
+        neu();
+
+        function neu() {
+            var mesaj = "";
+            var laptop = {
+                name: "HP PAVILION",
+                year: 2021,
+                ram: "16gb",
+                islemci: "AMD RYZON7"
+            };
+
+            for (x in laptop) {
+                mesaj += laptop[x] + "**";
+            }
+            document.getElementById("kolayyaz").innerHTML = mesaj;
+        }
+    </script>
+</body>
+
+</html>

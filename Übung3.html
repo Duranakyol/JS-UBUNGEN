@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FUNCTION</title>
+</head>
+
+<body onload="message();">
+    <select id="meineSelect" onchange="wechseln();"> 
+        <option>PHP</option>
+        <option>ASP.NET</option>
+        <option>COLD FUSION</option>
+        <option>JSP</option>
+    </select>
+    <button id="btn" onmouseover="uzerinegeldiginde();">BUTTON_1</button>
+    <button id="btn" onmouseout="uzerindenayrildiginda();">BUTTON_2</button>
+    <button id="btn" onmousedown="tikladiginda();">BUTTON_3</button>
+    <button id="btn" onmouseup="elinicektiginde();">BUTTON_4</button>
+    <button id="btn" onmousemove="farehareketettiginde();">BUTTON_4</button>
+
+    <script>
+        //Sayfa yüklenir yüklenmez mesaj vermek icin onload kullanilir.
+        function message() {
+            alert("Ben yüklendim!");
+        }
+
+        // bir degisiklik yapildiginda asagidaki yaziyi yazacaktir.
+        function wechseln() {
+            document.getElementById("meineSelect").innerHTML = "Sanirim bir seyler degistirildi!";
+        }
+
+        function hinzufuegen() {
+            var vorher = document.getElementById("warenkorb").innerHTML;
+            var text = "<div>1. Produktname</div>";
+            var neu = vorher + text;
+            document.getElementById("warenkorb").innerHTML = neu;
+            //oder alltakini yap o daha kolay
+        }
+
+        function hinzufuegen() {
+            document.getElementById("warenkorb").innerHTML += "<div> 1. Prdouktname</div>";
+
+            // Bu sekilde her tikladiginda eklenir warenkorb'a.
+        }
+
+        var zahl = 1;
+
+        function hinzufuegen() {
+            document.getElementById("warenkorb").innerHTML += "<div>" + zahl + ".Produktname";
+            zahl++;
+        }
+
+        //var immer disari ya global olsun. bu sekilde ise her tiklandiginda bir artar.
+    </script>
+
+
+</body>
+
+</html>

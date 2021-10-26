@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DÖRT ISLEM</title>
+    <style>
+        body {
+            color: #fff;
+            background-color: #573334;
+        }
+        
+        #game {
+            width: 350px;
+            background-color: #333333;
+            padding: 18px;
+            text-align: center;
+            margin: auto;
+            margin-top: 250px;
+        }
+        
+        h1 {
+            margin: 0 0 18px 0;
+            border: solid 1px #fff;
+            padding: 5px;
+            font-weight: 400;
+        }
+        
+        span {
+            font-size: 125%;
+            padding: 12px;
+        }
+        
+        #result {
+            width: 90px;
+        }
+        
+        #answer {
+            margin-top: 10px;
+            padding: 5px;
+            border: none;
+            width: 100px;
+            background-color: #565613;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        answer:hover {
+            background: #7a2525;
+        }
+        
+        #True,
+        #False {
+            font-size: 150%;
+            margin-top: 10px;
+            padding: 10px;
+            display: inline-block;
+        }
+        
+        #True {
+            background-color: #1C9605;
+        }
+        
+        #False {
+            background-color: #bd0c0c;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="game">
+        <h1>DÖRT ISLEM OYUNU</h1>
+        <span id="Number1">0</span>
+        <span id="Operator">*</span>
+        <span id="Number2">0</span>
+        <span>=</span>
+        <input type="text" id="result">
+        <button id="answer">CEVAPLA</button>
+        <div style="clear: both"></div>
+        <div id="True">0</div>
+        <div id="False">0</div>
+        <div style="clear:both"></div>
+    </div>
+    <script>
+        var Number1, Number2, Operator, result, answer, True = 0,
+            False = 0;
+        Number1 = document.getElementById("Number1");
+        Number2 = document.getElementById("Number2");
+        Operator = document.getElementById("Operator");
+        result = document.getElementById("result");
+        answer = document.getElementById("answer");
+        True = document.getElementById("True");
+        False = document.getElementById("False");
+
+        //Rastgele sayi üretme fonksiyonu
+        function RandomNumber(min, max) {
+            var number = Math.floor(Math.random() * (max - min)) + min;
+            return number;
+        }
+
+        //Oyun baslangicinda veya soru tahmini sonrasi yeni soru olusturma fonksiyonu
+        function newQuestion() {
+            var operation = ["+", "-", "*", "/"];
+            Operator.textContent = operation[RandomNumber(0, 4)]; //operator secimi
+            Number1.textContent = RandomNumber(0, 50);
+            Number2.textContent = RandomNumber(0, 50);
+            if (Operator.textContent == "/") {
+                while (true) {
+                    Number2.textContent = RandomNumber(0, 50);
+                    if (Number1.textContent % Number2.textContent == 0) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        //Sayfa yüklendiginde yeni soru soran fonksiyonum(newQuestion) calistir!
+        window.onload = function() {
+            newQuestion();
+        }
+
+        //cevapla butonuna basildiginda degerlendirme islemi yapma
+        answer.onclick = function() {
+            var ans, n1, n2;
+            n1 = Number(Number1.textContent);
+            n2 = Number(Number2.textContent);
+            switch (Operator.textContent) {
+                case "+":
+                    ans = n1 + n2;
+                    break;
+                case "-":
+                    ans = n1 - n2;
+                    break;
+                case "*":
+                    ans = n1 * n2;
+                    break;
+                case "/":
+                    ans = n1 / n2;
+                    break;
+                default:
+                    break;
+            }
+            if (result.value == ans) {
+                True.textContent = Number(True.textContent) + 1;
+            } else {
+                False.textContent = Number(False.textContent) + 1;
+            }
+            newQuestion();
+        }
+    </script>
+</body>
+
+</html>

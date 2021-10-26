@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <title>PLUS-MINUS</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .Hauptcontainer {
+        width: 1000px;
+        height: auto;
+    }
+    
+    button {
+        background-color: red;
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        font-size: 30px;
+        float: left;
+    }
+    
+    #text {
+        font-size: 60px;
+        padding-left: 20px;
+    }
+</style>
+
+<body>
+    <div class="Hauptcontainer">
+        <div id="text"></div>
+        <button class="minus" onclick="minus();">-</button>
+        <button class="plus" onclick="plus();">+</button>
+    </div>
+    <script>
+        var x = 13;
+        var y = x++;
+        var z = x--;
+
+        function minus() {
+
+            document.getElementById("text").innerHTML = x--;
+        }
+
+        function plus() {
+            document.getElementById("text").innerHTML = z++;
+        }
+
+        //Sen bunu en iyisi if else ile yap en temizi odur.
+    </script>
+</body>

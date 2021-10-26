@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SCROLL</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 800px;
+            height: 50px;
+            border: 1px solid gray;
+        }
+        
+        .box {
+            background-color: red;
+            height: 48px;
+            width: 48px;
+            transition: margin-left 0.8s;
+        }
+        
+        .zahlen {
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        
+        .buttons button {
+            width: 100px;
+            margin: 0 10px;
+            padding: 14px 0;
+            border: none;
+            outline: none;
+            background-color: orange;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box"></div>
+    </div>
+    <div class="zahlen">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+    <div class="buttons">
+        <button onclick="link();">LINKS</button>
+        <button onclick="rechts();">RECHTS</button>
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        //var margin = 0;
+
+        var schritt1 = 0;
+        var schritt2 = 175;
+        var schritt3 = 375;
+        var schritt4 = 575;
+        var schritt5 = 750;
+
+        var schritt = 1;
+
+        //yani bunlara schritt atmana gerek yoktu diger türlü de yaparsin ama böyle daha güzel duruyor!
+
+        function link() {
+            schritt--;
+
+            if (schritt == 4) {
+                box.style.marginLeft = schritt4 + "px";
+            } else if (schritt == 3) {
+                box.style.marginLeft = schritt3 + "px";
+            } else if (schritt == 2) {
+                box.style.marginLeft = schritt2 + "px";
+            } else if (schritt == 1) {
+                box.style.marginLeft = schritt1 + "px";
+            } else {
+                schritt = 1;
+            }
+        }
+
+        function rechts() {
+            schritt++;
+
+            if (schritt == 2) {
+                box.style.marginLeft = schritt2 + "px";
+            } else if (schritt == 3) {
+                box.style.marginLeft = schritt3 + "px";
+            } else if (schritt == 4) {
+                box.style.marginLeft = schritt4 + "px";
+            } else if (schritt == 5) {
+                box.style.marginLeft = schritt5 + "px";
+            } else {
+                schritt = 5;
+            }
+        }
+    </script>
+</body>
+
+</html>

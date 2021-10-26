@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VARIABLEN</title>
+
+</head>
+
+<body>
+    <div id="result1"></div><br>
+    <div id="result2"></div><br>
+    <div id="result3"></div><br>
+    <div id="result4"></div><br>
+    <div id="yazdir"></div>
+
+    <script>
+        // Fahreneight'tan Celcius'a cevirme formülü
+        function toCelcius(x) {
+            return (5 / 9) * (x - 32);
+        }
+        document.write(toCelcius(59)); // F=59 iken C=15 olur.
+        document.write("<br>");
+        //Simdi ise bazi islemler yapacaz
+
+        function sum(data1, data2) {
+            return (data1 + data2);
+        }
+
+        function Calculate(par1, par2) {
+            return sum(par1, par2) * sum(par1, par2);
+        }
+
+        var getNumber = Calculate(4, 5);
+        document.write(getNumber);
+
+        //Böyle degiskende kullanabilirsin ancak innerHTML'de kullanabilirsin.
+
+        document.getElementById('result1').innerHTML = Calculate(4, 5);
+        document.getElementById('result2').innerHTML = Calculate(3, 5);
+        document.getElementById('result3').innerHTML = Calculate(2, 5);
+        document.getElementById('result4').innerHTML = Calculate(1, 5);
+        //Bunu daha toplu bir sekilde yapabiliriz:
+
+        document.write("<br>");
+
+        function topla(data1, data2) {
+            return (data1 + data2);
+        }
+
+        function Hesapla(par1, par2) {
+            return topla(par1, par2) * topla(par1, par2);
+        }
+
+        function printScreen(par) {
+            document.write(par + "<br><br>"); //alert'te yazabilirsin buraya.
+        }
+
+        printScreen(Hesapla(4, 5));
+        printScreen(Hesapla(3, 5));
+        printScreen(Hesapla(2, 5));
+        printScreen(Hesapla(1, 5));
+
+        //Simdi ise object property ve methods ögrenecegiz
+
+        var car = {
+            name: "Fiat",
+            model: "70sx",
+            color: "metallic",
+            start: function() {
+                return this.name + " " + this.model + " calistirildi";
+            },
+            drive: function() {
+                return this.name + " " + this.model + " kullaniliyor";
+            },
+            brake: function() {
+                return this.name + " " + this.model + " frene basildi";
+            },
+            stop: function() {
+                return this.name + " " + this.model + " durduruldu";
+            }
+        };
+        document.getElementById("yazdir").innerHTML = car.start() + "<br>" +
+            car.drive() + "<br>" +
+            car.brake() + "<br>" +
+            car.stop() + "<br>";
+
+        // scope icine yazilanlara disaridan erisim yoktur.(Yerel bir degiskendir.)
+        scope();
+
+        function scope() {
+            var name = "NODE JS";
+        }
+
+        document.getElementById(yazdir).innerHTML = name; //icinden o name'yi cekemez. o scope icindedir.
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RATE DIE ZAHL</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    h1 {
+        font-weight: bold;
+    }
+    
+    #text {
+        padding: 10px 30px;
+        text-align: center;
+        border: 1px solid #be4040;
+        font-size: 20px;
+    }
+    
+    #btn {
+        background-color: #d69823;
+        padding: 10px 90px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 30px;
+    }
+    
+    #korrekt {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <h1>RATE DIE ZAHL</h1><br>
+    <input type="text" id="text"><br>
+    <input type="button" id="btn" onclick="raten();" value="RATEN">
+    <span id="korrekt">RICHTIG ODER FALSCH ?</span><br>
+    <div id="result"></div>
+    <script>
+        var x = Math.random() * 100;
+        x = Math.floor(x); // Burada random sayi verir 1 ile 100 arasinda biz onu tahmin ederiz!
+
+        function raten() {
+            var valueText = parseInt(document.getElementById("text").value);
+            var message = "";
+            if (valueText == x) {
+                message = "Ihre Raten ist richtig!";
+            } else if (valueText < x) {
+                message = "Ihre Raten ist zu wenig";
+            } else {
+                message = "Ihre Raten ist zu viel!";
+            }
+            document.getElementById("result").innerHTML = message;
+        }
+    </script>
+</body>
+
+</html>
