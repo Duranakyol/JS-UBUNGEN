@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Übung16</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 700px;
+            height: 600px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .meinBox {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background-color: red;
+        }
+        
+        .blau {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var con = document.createElement("div");
+        con.classList.add("container");
+        document.body.appendChild(con);
+
+        var btn = document.createElement("button");
+        btn.innerHTML = "BOX HINZUFÜGEN";
+        document.body.appendChild(btn);
+
+        btn.onclick = addBox;
+
+        function addBox() {
+            var box = document.createElement("div");
+            box.classList.add("meinBox");
+            box.classList.add("blau"); // style da önemli simdi burda css ile box'lara sekil veriyoruz!
+
+            con.appendChild(box);
+        }
+    </script>
+</body>

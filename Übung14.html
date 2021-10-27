@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GENERIEN</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <input type="text" id="meineInput" placeholder="Wie Wiel?"><br>
+    <button onclick="meineFunction();">GENERIEN</button><br>
+    <span id="meineSpan"></span>
+    <script>
+        var body = document.getElementById("body");
+        var meineInput = document.getElementById("meineInput");
+        var meineSpan = document.getElementById("meineSpan");
+
+        function meineFunction() {
+            var value = document.getElementById("meineInput").value;
+            for (i = 1; i <= value; i++) {
+                meineSpan.innerHTML += i + " .Runde <br>";
+            }
+        }
+    </script>
+</body>
+
+</html>

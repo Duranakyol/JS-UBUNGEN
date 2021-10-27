@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung19</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 700px;
+            height: auto;
+            min-height: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            border: 1px solid black;
+            margin: 20px;
+        }
+        
+        .btn {
+            margin: 15px;
+            padding: 10px 25px;
+            color: white;
+            background-color: blue;
+            cursor: pointer;
+            box-shadow: red;
+        }
+        
+        .meinBox {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+        
+        .rot {
+            background-color: red;
+        }
+        
+        .blau {
+            background-color: blue;
+        }
+        
+        .gelb {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="con">
+
+    </div>
+
+    <select id="meineSelect">
+            <option value="red">ROT</option>
+            <option value="blue">BLAU</option>
+            <option value="yellow">GELB</option>
+        </select>
+
+    <button class="btn" onclick="hinzufuegen();">HINZUFÜGEN</button>
+
+    <script>
+        var select = document.getElementById("meineSelect"); //eger ki value'ye 1 2 3 yazsaydik if icine value esittir 1 ise red yap!
+
+        function hinzufuegen() {
+            var box = document.createElement("div");
+            box.classList.add("meinBox");
+            box.style.backgroundColor = select.value;
+
+            document.getElementById("con").appendChild(box);
+        }
+    </script>
+</body>
+
+</html>

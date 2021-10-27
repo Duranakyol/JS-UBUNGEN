@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung15</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 700px;
+            height: 600px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        
+        .meineBox {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background-color: red;
+        }
+        
+        .blau {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    </div>
+    <script>
+        var con = document.createElement("div");
+        con.classList.add("container");
+        document.body.appendChild(con);
+
+        for (i = 0; i < 7; i++) {
+            var box = document.createElement("div"); //ekleyecegimiz div'i var box'a atadik!
+
+            box.classList.add("meineBox"); //box'a bu sekilde class veriyoruz!
+            box.classList.add("blau");
+
+            con.appendChild(box); // con parenti icine bir adet child ekledik!
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung20</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 700px;
+            height: auto;
+            min-height: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            border: 1px solid black;
+            margin: 20px;
+        }
+        
+        .btn {
+            margin: 15px;
+            padding: 10px 25px;
+            color: white;
+            background-color: blue;
+            cursor: pointer;
+            box-shadow: red;
+        }
+        
+        .meinBox {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+        
+        .number {
+            padding: 8px 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .rot {
+            background-color: red;
+        }
+        
+        .blau {
+            background-color: blue;
+        }
+        
+        .gelb {
+            background-color: yellow;
+            color: red;
+        }
+        
+        #info {
+            color: red;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="con">
+
+    </div>
+    <input type="text" class="number" id="zahl" placeholder="Wie Wiel?">
+    <select id="meineSelect">
+            <option value="1">ROT</option>
+            <option value="2">BLAU</option>
+            <option value="3">GELB</option>
+            <option value="4">MAGENTA</option>
+        </select>
+
+    <button class="btn" onclick="hinzufuegen();">HINZUFÜGEN</button><br><br>
+    <span id="info"></span>
+    <script>
+        var select = document.getElementById("meineSelect"); //eger ki value'ye 1 2 3 yazsaydik if icine value esittir 1 ise red yap!
+        var info = document.getElementById("info");
+
+        function hinzufuegen() {
+
+
+            var max = document.getElementById("zahl").value;
+
+            if (max == "") {
+                infoText("INPUT KANN NICHT LEER SEIN!", "red");
+            } else {
+                max = parseInt(max);
+
+                for (var i = 0; i < max; i++) {
+                    var box = document.createElement("div");
+                    box.classList.add("meinBox");
+                    box.style.backgroundColor = farbe();
+
+                    document.getElementById("con").appendChild(box);
+                }
+                infoText("ERFOLGREICH HINZUGEFÜGT!", "blue");
+            }
+        }
+
+        function infoText(text, farbe) {
+            info.innerHTML = text;
+            info.style.color = farbe;
+            setTimeout(verstecken, 3000);
+        }
+
+        function farbe() {
+
+            var value = select.value;
+            if (value == "1") {
+                return "red";
+            } else if (value == "2") {
+                return "blue";
+            } else if (value == "3") {
+                return "yellow";
+            } else {
+                return "magenta";
+            }
+        }
+
+        function verstecken() {
+            info.innerHTML = ""; //burada icini tekrar bosalttik info yazisinin!
+        }
+    </script>
+</body>
+
+</html>

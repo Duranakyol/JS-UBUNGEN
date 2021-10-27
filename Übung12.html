@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FOR SCHLEIFEN</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <script>
+        var body = document.getElementById("body");
+        var zahl = 0;
+        body.innerHTML = zahl;
+        zahl = 8;
+        body.innerHTML = zahl; //tekrar tekrar yaz bunu aktuell et yani!
+
+        for (i = 1; i <= 5; i++) {
+            zahl++;
+        }
+        body.innerHTML = zahl; //zahl 8 iken 5 arttirdi ve 13 yazdirdi ekrana!
+    </script>
+</body>
+
+</html>

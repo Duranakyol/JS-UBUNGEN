@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung18</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 700px;
+            height: auto;
+            min-height: 150px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .meinBox {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+        
+        .btn {
+            padding: 10px 25px;
+            color: white;
+            cursor: pointer;
+            margin: 12px;
+        }
+        
+        .rot {
+            background-color: red;
+        }
+        
+        .blau {
+            background-color: blue;
+        }
+        
+        .gelb {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="con">
+
+    </div>
+    <div class="buttons">
+        <button class="btn rot" onclick="addBox('red');">ROT</button>
+        <button class="btn blau" onclick="addBox('blue');">BLAU</button>
+        <button class="btn gelb" onclick="addBox('yellow');">GELB</button>
+    </div>
+    <script>
+        function addBox(farbe) {
+            document.getElementById("con").appendChild(boxGenerien(farbe));
+        }
+
+        function boxGenerien(farbe) {
+            var x = document.createElement("div"); // burada x ile tanimlanan sey container icine atilacak div'dir!
+            x.classList.add("meinBox"); //bu div ise meinBox özelliklerini alarak con icine girer!
+            x.style.backgroundColor = farbe;
+
+            return x;
+        }
+    </script>
+</body>
+
+</html>

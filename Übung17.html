@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung17</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 700px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+        
+        .meinBox {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+        
+        .btn {
+            border: none;
+            outline: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            margin: 15px;
+        }
+        
+        .rot {
+            background-color: red;
+        }
+        
+        .blau {
+            background-color: blue;
+        }
+        
+        .gelb {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="con">
+
+    </div>
+    <div id="buttons">
+
+    </div>
+    <script>
+        var btnRot = document.createElement("button");
+        var btnBlau = document.createElement("button");
+        var btnGelb = document.createElement("button");
+
+        btnRot.classList.add("btn");
+        btnBlau.classList.add("btn");
+        btnGelb.classList.add("btn");
+
+        btnRot.classList.add("rot");
+        btnBlau.classList.add("blau");
+        btnGelb.classList.add("gelb");
+
+        btnRot.innerHTML = "ROT";
+        btnBlau.innerHTML = "BLAU";
+        btnGelb.innerHTML = "GELB";
+
+        btnRot.onclick = function() {
+            addBox("red");
+        }
+        btnBlau.onclick = function() {
+            addBox("blue");
+        }
+        btnGelb.onclick = function() {
+            addBox("yellow");
+        }
+
+        document.getElementById("buttons").appendChild(btnRot);
+        document.getElementById("buttons").appendChild(btnBlau);
+        document.getElementById("buttons").appendChild(btnGelb);
+
+        function addBox(farbe) {
+            var box = document.createElement("div");
+            box.classList.add("meinBox");
+            box.style.backgroundColor = farbe;
+
+            document.getElementById("con").appendChild(box);
+        }
+    </script>
+</body>
+
+</html>
