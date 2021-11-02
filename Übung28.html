@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung28</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: darkturquoise;
+        }
+        
+        .container {
+            width: 500px;
+            padding: 25px;
+            border: 1px solid #cccccc;
+            position: relative;
+            background-color: #0b2727;
+            color: white;
+            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.59);
+        }
+        
+        .form {
+            display: none;
+            flex-direction: column;
+        }
+        
+        .form span {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .form input {
+            margin-bottom: 8px;
+            outline: none;
+            padding: 5px 8px;
+        }
+        
+        .boxContainer {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+        
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 140px;
+            height: 140px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.5s;
+        }
+        
+        .box:hover {
+            opacity: 1;
+        }
+        
+        .box img {
+            height: 130px;
+            width: 130px;
+            border-radius: 15px;
+        }
+        
+        .container h2 {
+            margin-top: 0;
+        }
+        
+        .aktiv {
+            border: 3px solid red;
+            border-radius: 20px;
+        }
+        
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .buttons button {
+            outline: none;
+            border: none;
+            padding: 10px 23px;
+            background-color: darkorange;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        #schritt {
+            text-align: center;
+            font-size: 0.9em;
+            color: red;
+            display: block;
+        }
+        
+        #zuruck {
+            opacity: 0;
+        }
+        
+        #gesendet {
+            display: none;
+            text-align: center;
+        }
+        
+        .slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .slider i {
+            margin: 20px;
+            font-size: 2em;
+            opacity: 0.5;
+        }
+        
+        #slide1 {
+            opacity: 1;
+        }
+        
+        #progress {
+            height: 8px;
+            width: 5%;
+            background-color: darkorange;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: width 0.3s, background-color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div id="progress"></div>
+        <h2>FAHRZEUGSUCHE</h2>
+
+        <div class="form" style="display: flex;">
+            <span>Fahrzeugtyp auswählen :</span>
+            <div class="boxContainer">
+                <div class="box">
+                    <img src="car.jpg">
+                    <span>Kleinwagen</span>
+                </div>
+
+                <div class="box">
+                    <img src="limousine.jpg">
+                    <span>Limousine</span>
+                </div>
+
+                <div class="box">
+                    <img src="combi.jpg">
+                    <span>Combi</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form">
+            <span>Baujahr auswählen :</span>
+            <div class="boxContainer">
+                <div class="box">
+                    <img src="altesAuto.jpg">
+                    <span>Altes Auto</span>
+                </div>
+
+                <div class="box">
+                    <img src="neuesAuto.jpg">
+                    <span>Neues Auto</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form">
+            <span>Fahrzeug Daten :</span>
+            <div class="boxContainer">
+                <div class="box">
+                    <img src="altesAuto.jpg">
+                    <span>Altes Auto</span>
+                </div>
+
+                <div class="box">
+                    <img src="neuesAuto.jpg">
+                    <span>Neues Auto</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form">
+            <span>Fahrzeug Daten :</span>
+            <div class="boxContainer">
+                <div class="box">
+                    <img src="altesAuto.jpg">
+                    <span>Altes Auto</span>
+                </div>
+
+                <div class="box">
+                    <img src="neuesAuto.jpg">
+                    <span>Neues Auto</span>
+                </div>
+            </div>
+        </div>
+
+        <span id="gesendet">ERFOLGREICH GESENDET!</span>
+        <span id="schritt">Schritt : 0</span>
+
+        <div class="buttons">
+            <button onclick="nav(-1), zuruckIcon();" id="zuruck">Zurück</button>
+            <button onclick="nav(1);" id="weiter">Weiter</button>
+        </div>
+
+        <div class="slider" id="slider">
+            <i class="fas fa-chevron-circle-right" id="slide1"></i>
+            <i class="fas fa-chevron-circle-right"></i>
+            <i class="fas fa-chevron-circle-right"></i>
+            <i class="fas fa-chevron-circle-right"></i>
+        </div>
+    </div>
+    <script src="Übung28.js"></script>
+    <script src="boxen.js"></script>
+</body>
+
+</html>

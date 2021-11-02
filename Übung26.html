@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung26</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            background-color: #483d8b;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            background-color: #5645c7;
+            margin: 40px auto 0 auto;
+            padding: 20px 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0 0 20px 0;
+        }
+        
+        .zeile {
+            display: flex;
+        }
+        
+        .zeile>* {
+            flex-grow: 1;
+        }
+        
+        .zeile>input {
+            padding: 5px 8px;
+            border: none;
+            outline: none;
+            margin-right: 10px;
+        }
+        
+        .zeile>button {
+            border: none;
+            outline: none;
+            background-color: orangered;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .zeile>button:hover {
+            background-color: #eb805a;
+        }
+        
+        .liste {
+            margin-top: 20px;
+        }
+        
+        .liste>div {
+            padding: 6px 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .liste>div:active {
+            background-color: orangered !important;
+            cursor: pointer;
+            position: relative;
+            top: 5px;
+            left: 5px;
+        }
+        
+        .liste i {
+            cursor: pointer;
+        }
+        
+        .liste i:hover {
+            color: #c9c1ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Meine Einkaufsliste</h1>
+        <div class="zeile">
+            <input id="inp" type="text" placeholder="Schreiben...">
+            <button onclick="add();">Hinzufügen</button>
+        </div>
+
+        <div class="liste" id="liste">
+
+        </div>
+    </div>
+
+
+
+    <script src="Übung26.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung22</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            flex-direction: column;
+        }
+        
+        button,
+        input {
+            margin: 5px;
+            padding: 8px;
+        }
+        
+        .info {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="Benutzer Name" id="benutzer">
+        <input type="password" placeholder="Passwort" id="pass">
+        <button id="btn" onclick="login(this);">ANMELDEN</button>
+    </div>
+
+    <div class="info" id="info"></div>
+
+
+    <script>
+        var benutzer = document.getElementById("benutzer");
+        var pass = document.getElementById("pass");
+        var richtigerBenutzer = "admin";
+        var richtigesPasswort = "Pass123";
+        var info = document.getElementById("info");
+        var button = document.getElementById("btn");
+        var versuche = 2;
+        var blockiert = false;
+
+        function login(el) {
+            if (blockiert == true) {
+                return;
+            }
+            if (benutzer.value == richtigerBenutzer) {
+                if (pass.value == richtigesPasswort) {
+                    info.innerHTML = "Eingeloggt!";
+                } else {
+                    info.innerHTML = "Passwort ist falsch! <br> Verbleibende Versuche : " + versuche;
+                    versuche--;
+
+                    if (versuche == -1) {
+                        info.innerHTML = "Zu oft falsch eingegeben! <br> Sie wurden blockiert! <br> Bitte warten Sie 5 Sekunden!"
+                        blockiert = true;
+                        el.disabled = true;
+                        setTimeout(reset, 5000, el); //buraya el yazmamizin sebebi ise el parametresi almis function!
+                    }
+                }
+
+            } else {
+                info.innerHTML = "Benutzer Name ist unbekannt!";
+            }
+        }
+
+        function reset(elem) {
+            elem.disabled = false;
+            // buraya elem yazmamizin sebebi ise artik bu baska bir function ve el'yi tanimaz!
+        }
+
+        //Bunu alta yazdik ama href ekleyipte sayfaya gönderemedik!
+        function einloggen() {
+            var a = document.createElement("a");
+            button.appendChild("a");
+            var href = document.createAttribute("href");
+            href.value = "https://www.kho.edu.tr";
+            a.setAttributeNode(href);
+        }
+    </script>
+</body>
+
+</html>

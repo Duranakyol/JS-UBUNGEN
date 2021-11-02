@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung27</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            transition: background-color 0.1s;
+        }
+        
+        #hintergrundText {
+            position: absolute;
+            font-size: 11em;
+            font-weight: bold;
+            z-index: 0;
+            opacity: 15%;
+            /* 0.15 */
+        }
+        
+        #liste {
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="hintergrundText">Red</span>
+    <select id="liste" onchange="colorChange()">
+    <option class="opt" value="red">Red</option>
+    <option class="opt" value="blue">Blue</option>
+    <option class="opt" value="green">Green</option>
+    <option class="opt" value="yellow">Yellow</option>
+</select>
+    <script src="Übung27.js"></script>
+</body>
+
+</html>

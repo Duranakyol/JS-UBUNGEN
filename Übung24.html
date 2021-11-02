@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung24</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        .menu {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style-type: none;
+        }
+        
+        .menu li {
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .menu li div {
+            background-color: #545454;
+            padding: 10px 0;
+            color: white;
+            font-size: 1.5em;
+            transition: background-color 0.3s;
+            margin-bottom: 6px;
+        }
+        
+        .menu li:hover:not(.aktiv) div {
+            background-color: #2b2b2b;
+        }
+        
+        .menu li:hover span {
+            opacity: 1;
+        }
+        
+        .menu li span {
+            font-size: 0.8em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        li.aktiv div {
+            background-color: #277b7e;
+        }
+        
+        li.aktiv span {
+            color: #277b7e;
+        }
+        
+        .suchen #suchleiste {
+            display: block;
+            padding: 12px;
+            background-color: #277b7e;
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            top: 46px;
+            right: 0;
+            opacity: 0;
+        }
+        
+        .suchen #suchleiste input {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="menu">
+            <li onclick="aktivieren(this);">
+                <div><i class="fas fa-home"></i></div>
+                <span>HOME</span>
+            </li>
+            <li onclick="aktivieren(this);">
+                <div><i class="fab fa-apple"></i></div>
+                <span>MACOS</span>
+            </li>
+            <li onclick="aktivieren(this);">
+                <div><i class="fab fa-windows"></i></div>
+                <span>MICROSOFT</span>
+            </li>
+            <li onclick="aktivieren(this);">
+                <div><i class="fab fa-android"></i></div>
+                <span>ANDROID</span>
+            </li>
+            <li onclick="aktivieren(this);">
+                <div><i class="fab fa-ubuntu"></i></div>
+                <span>UBUNTU</span>
+            </li>
+            <li onclick="aktivieren(this);" class="suchen">
+                <div><i class="fas fa-search"></i></div>
+                <span>SEARCH</span>
+                <b id="suchleiste">
+                    <input type="text" placeholder="Suchbegriff eingeben">
+                </b>
+            </li>
+        </ul>
+    </header>
+
+    <script src="Übung24.js"></script>
+</body>
+
+</html>
