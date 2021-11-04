@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 350px;
+}
+
+#inputs>* {
+    padding: 8px 16px;
+    margin: 4px;
+    border-radius: 4px;
+    outline: none;
+}
+
+button {
+    background-color: darkorange;
+    cursor: pointer;
+}
+
+.anzeige {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin: 25px 30px;
+    flex-wrap: wrap;
+}
+
+.anzeige>img {
+    width: 300px;
+    height: 150px;
+}
+
+.data {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.data .titel {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.data .untertitel {
+    color: rgb(103, 103, 103);
+    margin-bottom: 10px;
+}
+
+.merkmale>div:first-child {
+    margin-bottom: 4px;
+}
+
+.merkmale span {
+    background-color: rgb(223, 203, 195);
+    border-radius: 4px;
+    padding: 5px 8px;
+    display: inline-block;
+    font-size: 0.9em;
+    margin: 0 5px;
+}
+
+.anzeigenContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

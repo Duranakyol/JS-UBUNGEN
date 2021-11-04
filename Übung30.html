@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung30</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            flex-direction: column;
+            background-color: #d61609;
+        }
+        
+        .container {
+            background-color: #410653;
+            border-radius: 80px;
+            width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            padding: 40px;
+            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        }
+        
+        .inputs {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .preis {
+            display: flex;
+            align-items: center;
+        }
+        
+        .preis input {
+            flex-grow: 1;
+            border-radius: 20px 20px 20px 20px;
+            border-right-width: 0;
+        }
+        
+        .preis span {
+            font-size: 1.5em;
+            background-color: darkorange;
+            padding: 1px 30px;
+            margin-left: -92px;
+            border-radius: 0 20px 20px 0;
+            color: whitesmoke;
+        }
+        
+        input {
+            margin: 10px;
+            padding: 10px 25px;
+            font-size: 1em;
+            border: 1px solid gray;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .inputs button {
+            background-color: darkorange;
+            color: white;
+            margin: 10px;
+            padding: 10px 25px;
+            text-align: center;
+            font-size: 1em;
+            transition: background-color 0.5s;
+        }
+        
+        .inputs button:hover {
+            cursor: pointer;
+            background-color: #7c4604;
+        }
+        
+        .tabelle {
+            margin-top: 20px;
+            width: 900px;
+        }
+        
+        .titel {
+            display: flex;
+        }
+        
+        .titel>* {
+            text-align: center;
+        }
+        
+        .titel>*:first-child {
+            text-align: left;
+        }
+        
+        .titel>*:last-child {
+            text-align: right;
+        }
+        
+        .linie {
+            margin: 10px 0;
+            border: 2px solid darkorange;
+            background-color: darkorange;
+        }
+        
+        .liste {
+            display: flex;
+        }
+        
+        .liste>* {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .liste>*:first-child {
+            text-align: left;
+        }
+        
+        .liste>*:last-child {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>INSERAT ERSTELLEN</h2>
+        <div class="inputs">
+            <input type="text" placeholder="Marke, Modell etc." id="marke">
+            <div class="preis">
+                <input type="text" placeholder="Preis" id="preis">
+                <span>€</span>
+            </div>
+            <button onclick="add();">Hinzufügen</button>
+        </div>
+
+        <div class="tabelle">
+
+            <div class="titel" id="titel">
+                <span>GÜNSTIG</span>
+                <span>FAIR</span>
+                <span>TEUER</span>
+                <span>EXTREM TEUER</span>
+            </div>
+
+            <div class="linie"></div>
+
+            <div class="liste" id="liste">
+                <div id="guenstig">
+
+                </div>
+                <div id="fair">
+
+                </div>
+                <div id="teuer">
+
+                </div>
+                <div id="extremTeuer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Übung30.js"></script>
+</body>
+
+</html>

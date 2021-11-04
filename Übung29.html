@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung29</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /* yukaridan sifirla üssten sifirla diyorum */
+            padding-top: 30px;
+        }
+        
+        aside {
+            width: 310px;
+            height: 620px;
+            border: 1px solid gray;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 15px;
+            align-content: flex-start;
+            justify-content: space-between;
+            overflow: overlay;
+            padding-right: 25px;
+            border-radius: 25px;
+        }
+        
+        aside img {
+            width: 125px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        
+        aside img:hover {
+            opacity: 0.8;
+        }
+        
+        main {
+            width: 900px;
+            height: auto;
+            margin-left: 50px;
+        }
+        
+        #container {
+            width: 100%;
+            height: 620px;
+            background-size: cover;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #container span {
+            font-size: 1.5em;
+            display: none;
+        }
+        
+        .inputBereich {
+            display: flex;
+            margin-top: 35px;
+        }
+        
+        .inputBereich input {
+            flex-grow: 1;
+            margin-right: 20px;
+            padding: 8px 20px;
+            font-size: 1.2em;
+            border-color: gray;
+            outline: none;
+            border-radius: 15px;
+        }
+        
+        .inputBereich button {
+            font-size: 1.2em;
+            padding: 8px 20px;
+            border: none;
+            outline: none;
+            background-color: darkorange;
+            color: whitesmoke;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside id="aside">
+
+    </aside>
+
+    <main>
+        <div id="container">
+            <span id="mySpan">Bild lädt...</span>
+        </div>
+        <div class="inputBereich">
+            <input id="link" type="text" placeholder="Link eingeben">
+            <button onclick="add();">Hinzufügen</button>
+        </div>
+    </main>
+
+
+
+    <script src="Übung29.js"></script>
+</body>
+
+</html>

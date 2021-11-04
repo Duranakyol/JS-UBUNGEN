@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung31</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --background: #131222;
+            --light: #2d2c4b;
+            --accent: #009ee3;
+            --accentHover: #0a8dc5;
+            --textlight: #ffffff;
+            --textghost: #9c9b9c;
+            --plus: #3dc438;
+            --minus: #b91d25;
+        }
+        
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--background);
+            color: var(--textlight);
+        }
+        
+        input {
+            outline: none;
+            border: none;
+            background-color: var(--light);
+            padding: 10px 20px;
+            color: var(--textlight);
+        }
+        
+        button {
+            outline: none;
+            border: none;
+            background-color: var(--accent);
+            border-radius: 6px;
+            color: var(--textlight);
+            cursor: pointer;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: var(--accentHover);
+        }
+        
+        h3 {
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+        }
+        
+        .inputContainer {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .inputContainer>* {
+            margin-bottom: 15px;
+        }
+        
+        .inputContainer>div {
+            display: flex;
+        }
+        
+        .inputContainer>div>span {
+            padding: 0 10px;
+            background-color: var(--accent);
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        #betragInput {
+            flex-grow: 1;
+        }
+        
+        .listeContainer {
+            width: 650px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 25px;
+        }
+        
+        #liste {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        
+        #liste>div {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        #liste>div>div {
+            background-color: var(--light);
+            flex-grow: 1;
+            padding: 6px 12px;
+            color: var(--textghost);
+            font-size: 0.9em;
+        }
+        
+        #liste>div>span:first-child {
+            background-color: var(--plus);
+            width: 25px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #liste>div>span:last-child {
+            background-color: var(--plus);
+            width: 100px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="inputContainer">
+        <h3>NEU TRANSAKTION</h3>
+        <input id="beschreibungInput" type="text" placeholder="Beschreibung">
+        <div>
+            <input type="text" id="betragInput" placeholder="Betrag">
+            <span>€</span>
+        </div>
+        <button onclick="add();">HINZUFÜGEN</button>
+    </div>
+
+    <div class="listeContainer">
+        <h3>NEU TRANSAKTION</h3>
+        <div id="liste">
+
+        </div>
+    </div>
+
+
+
+
+    <script src="Übung31.js"></script>
+</body>
+
+</html>

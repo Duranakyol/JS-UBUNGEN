@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung32</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+        
+        nav {
+            background-color: mediumblue;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            transition: all 1.8s;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 16px 25px;
+        }
+        
+        nav a:hover {
+            background-color: rgb(2, 2, 85);
+        }
+        
+        #hamburger {
+            font-size: 1.5em;
+            color: white;
+            margin: 0 20px;
+            display: none;
+        }
+        
+        @media(max-width: 500px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                height: 54px;
+            }
+            #hamburger {
+                display: flex;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            nav a {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navigation">
+            <i class="fas fa-bars" id="hamburger" onclick="menuKlick();"></i>
+            <a href="">Home</a>
+            <a href="">Über uns</a>
+            <a href="">Kontakt</a>
+            <a href="">Presse</a>
+        </nav>
+    </header>
+
+
+    <script src="Übung32.js"></script>
+</body>
+
+</html>
